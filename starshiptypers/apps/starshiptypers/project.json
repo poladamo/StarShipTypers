@@ -1,0 +1,26 @@
+{
+  "name": "starshiptypers",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/starshiptypers/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "starshiptypers:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "starshiptypers:build:development"
+        },
+        "production": {
+          "buildTarget": "starshiptypers:build:production"
+        }
+      }
+    }
+  }
+}
